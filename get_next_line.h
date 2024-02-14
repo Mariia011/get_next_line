@@ -6,7 +6,7 @@
 /*   By: marikhac <marikhac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 12:34:10 by marikhac          #+#    #+#             */
-/*   Updated: 2024/02/13 18:48:20 by marikhac         ###   ########.fr       */
+/*   Updated: 2024/02/14 21:09:41 by marikhac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,17 @@
 # define GET_NEXT_LINE
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 24
+#  define BUFFER_SIZE 10
 # endif
 
+# include <limits.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include <unistd.h>
+
+size_t	ft_strlen(const char *s);
 char	*get_next_line(int fd);
-int		ft_stlren(char *str);
+char	*ft_memchar(char *str, char c);
+void	ft_append(char **memory, char *buffer);
 
 # endif
