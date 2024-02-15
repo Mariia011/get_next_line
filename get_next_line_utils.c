@@ -6,52 +6,77 @@
 /*   By: marikhac <marikhac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 12:34:03 by marikhac          #+#    #+#             */
-/*   Updated: 2024/02/14 21:09:38 by marikhac         ###   ########.fr       */
+/*   Updated: 2024/02/15 20:47:58 by marikhac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen(const char *s, char const c)
 {
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while (s[i] && s[i] != c)
+		i++;
+	if (s[i] != '\0')
 		i++;
 	return (i);
 }
 
-void ft_append(char **memory, char *buffer)
-{
-	int i;
-	int d;
-	int t;
-	char *tmp;
 
-	tmp = malloc(ft_strlen(memory) + ft_strlen(buffer) + 1);
+// char *save_remain(char *str)
+// {
+
+// }
+
+char	*ft_strdup(char const *const memory)
+{
+	int		len;
+	int		i;
+	char	*str;
+
+	len = ft_strlen(memory, '\n');
+	i = 0;
+	str = malloc(len + 1);
+	while (i < len)
+	{
+		str[i] = memory[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
+void	ft_append(char **memory, char *buffer)
+{
+	int		i;
+	int		t;
+	int		d;
+	char	*tmp;
+
+	tmp = malloc(ft_strlen(*memory, 0) + ft_strlen(buffer, 0) + 1);
 	i = 0;
 	d = 0;
 	t = 0;
-	while((*memory)[i] || buffer[d])
+	while ((*memory)[i] || buffer[d])
 	{
-		if((*memory)[i])
-			tmp[t] = (*memory)[i++];
+		if ((*memory)[i])
+			tmp[t++] = (*memory)[i++];
 		else
-			tmp[t] = buffer[d++];
-		t++;
+			tmp[t++] = buffer[d++];
 	}
 	tmp[t] = '\0';
 	free(*memory);
 	*memory = tmp;
 }
 
-char *ft_memchar(char *str, char c)
+char	*ft_memchar(char *str, char c)
 {
 	while (*str)
 	{
 		if (*str == c)
-			return (str) ;
+			return (str);
 		str++;
 	}
 	return (NULL);
