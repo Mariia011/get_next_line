@@ -6,7 +6,7 @@
 /*   By: marikhac <marikhac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 12:34:10 by marikhac          #+#    #+#             */
-/*   Updated: 2024/02/15 20:46:53 by marikhac         ###   ########.fr       */
+/*   Updated: 2024/02/16 16:17:12 by marikhac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ char	*get_next_line(int fd);
 char	*ft_memchar(char *str, char c);
 char	*ft_strdup(char const *const memory);
 void	ft_append(char **memory, char *buffer);
-
+void	ft_free_old(char **memory);
 #endif
