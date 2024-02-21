@@ -6,7 +6,7 @@
 /*   By: marikhac <marikhac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 12:34:10 by marikhac          #+#    #+#             */
-/*   Updated: 2024/02/16 16:17:12 by marikhac         ###   ########.fr       */
+/*   Updated: 2024/02/21 20:05:06 by marikhac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 9
+#  define BUFFER_SIZE 100
 # endif
 
 # include <fcntl.h>
