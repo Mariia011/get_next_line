@@ -6,7 +6,7 @@
 /*   By: marikhac <marikhac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 12:34:03 by marikhac          #+#    #+#             */
-/*   Updated: 2024/02/21 20:09:43 by marikhac         ###   ########.fr       */
+/*   Updated: 2024/02/23 19:05:32 by marikhac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ size_t	ft_strlen(const char *s, char const c)
 
 void	ft_free_old(char **memory)
 {
-	int 	i;
-	int 	len_free;
+	int		i;
+	int		len_free;
 	char	*tmp;
 
 	len_free = ft_strlen(*memory, '\n');
@@ -35,11 +35,9 @@ void	ft_free_old(char **memory)
 	i = 0;
 	while ((*memory)[len_free] != '\0')
 		tmp[i++] = (*memory)[len_free++];
-
 	tmp[i] = '\0';
 	free(*memory);
 	*memory = tmp;
-	//printf("%s", *memory);
 }
 
 char	*ft_strdup(char const *const memory)
